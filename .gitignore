@@ -1,0 +1,20 @@
+### Operating systems ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+### Regular dev ###
+node_modules
+npm-debug.log
+.idea
+.vscode
+*.iml
+
+### generated files defined in gruntfile (or inside grunt tasks) ###
+target
+
+### bower ###
+/bower_components/*
