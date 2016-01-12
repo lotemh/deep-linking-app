@@ -1,0 +1,8 @@
+{
+  "name": "Deep Linking Demo App",
+  "description": "An app for demonstrating deep linking usage",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "",
+  "keywords": ["deep linking"],
+  "image": ""
+}
