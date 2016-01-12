@@ -1,23 +1,45 @@
 'use strict';
 
 (function() {
-    var state = 'brown';
+    var currentState = 'orange';
     var states = ['blue', 'red', 'green'];
 
+    function getState(){
+        return currentState;
+    }
+
+    function setState(state){
+        currentState = state;
+    }
+
     function changeState() {
-        states.push(state);
-        state = states.shift();
+        states.push(getState());
+        var state = states.shift();
+        setState(state);
     }
 
-    function updateUrl(){
-        Wix.pushState(state);
+    function updateUrl(state){
+        Wix.pushState('state/' + state);
     }
 
-    function setNewState() {
-        changeState();
+    function setStateInView(state){
         document.querySelector('#state').innerHTML = state;
-        updateUrl();
+        document.querySelector('#container').setAttribute("class", state);
+    }
+
+    function setNewState(state) {
+        if (typeof state == 'undefined' || state === ''){
+            changeState();
+            state = getState();
+        }
+        setStateInView(state);
+        updateUrl(state);
     }
 
     window.setNewState = setNewState;
 })();
+
+window.onload = function(){
+    var state = location.pathname.replace("/", "");
+    setNewState(state);
+};

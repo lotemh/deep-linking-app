@@ -8,7 +8,7 @@
 <body>
 
 <h1>Deep Linking App</h1>
-<div class="container">
+<div id="container">
     <div>state:
         <span id="state"></span>
     </div>
@@ -17,6 +17,10 @@
 
 <script type="text/jsx">
 
+</script>
+<script>
+    var name = "{{ state }}";
+    console.log("state: " + name);
 </script>
 
 </body>
