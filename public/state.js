@@ -19,7 +19,7 @@
     }
 
     function updateUrl(state){
-        Wix.pushState('state/' + state);
+        Wix.pushState(state);
     }
 
     function setStateInView(state){
