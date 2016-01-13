@@ -13,7 +13,7 @@ app.get('/red', function(request, response) {
     response.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/about', function(request, response) {
+app.get('/blue', function(request, response) {
     response.sendFile(__dirname + '/public/index.html');
 });
 
