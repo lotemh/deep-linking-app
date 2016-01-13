@@ -24,7 +24,7 @@
 
     function setStateInView(state){
         document.querySelector('#state').innerHTML = state;
-        document.querySelector('#container').setAttribute("class", state);
+        document.querySelector('#container').setAttribute('class', state);
     }
 
     function setNewState(state) {
@@ -36,10 +36,18 @@
         updateUrl(state);
     }
 
-    window.setNewState = setNewState;
+    function setStateFromUrl(){
+        var state = location.pathname.replace('/', '');
+        state = state === '' ? 'initial state' : state;
+        setNewState(state);
+    }
+
+    window.state = {
+        setNewState: setNewState,
+        setStateFromUrl: setStateFromUrl
+    };
 })();
 
 window.onload = function(){
-    var state = location.pathname.replace("/", "");
-    setNewState(state);
+    state.setStateFromUrl();
 };
