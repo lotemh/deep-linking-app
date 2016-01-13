@@ -28,12 +28,16 @@
     }
 
     function setNewState(state) {
+        setNewStateFromButtonClick(state);
+        updateUrl(state);
+    }
+
+    function setNewStateFromButtonClick(state) {
         if (typeof state == 'undefined' || state === ''){
             changeState();
             state = getState();
         }
         setStateInView(state);
-        updateUrl(state);
     }
 
     function setStateFromUrl(){
@@ -43,7 +47,7 @@
     }
 
     window.state = {
-        setNewState: setNewState,
+        setNewStateFromButtonClick: setNewStateFromButtonClick,
         setStateFromUrl: setStateFromUrl
     };
 })();
