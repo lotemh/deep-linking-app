@@ -28,16 +28,16 @@
     }
 
     function setNewState(state) {
-        setNewStateFromButtonClick(state);
-        updateUrl(state);
-    }
-
-    function setNewStateFromButtonClick(state) {
         if (typeof state == 'undefined' || state === ''){
             changeState();
             state = getState();
         }
         setStateInView(state);
+    }
+
+    function setNewStateFromButtonClick(state) {
+        setNewState(state);
+        updateUrl(state);
     }
 
     function setStateFromUrl(){
